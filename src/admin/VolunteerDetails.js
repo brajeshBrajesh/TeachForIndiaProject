@@ -12,7 +12,7 @@ export default function VolunteerDetails(props) {
   const [loading, setLoading] = useState(true);
   const [toDisplayData, setToDisplayData] = useState([]);
   let show_button = false;
-  if (toDisplayData.length >= 3) show_button = true;
+  if (toDisplayData.length >= 20) show_button = true;
   useEffect(() => {
     if (props.isAdmin === false) {
       navigate("/admin");
