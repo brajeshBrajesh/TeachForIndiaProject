@@ -65,149 +65,153 @@ export default function ClientForm() {
   return (
     <>
       <div className="container my-10">
-        <form onSubmit={submitHandler}>
-          <div className="mb-3">
-            <label htmlFor="nameInput" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="nameInput"
-              aria-describedby="Name"
-              ref={name}
-            />
-            {flags.name && (
-              <div className={`form-text ${styles.nameHelp}`}>
-                Please enter your name.
-              </div>
-            )}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">
-              Enter email
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              ref={email}
-            />
-            {flags.email && (
-              <div className={`form-text ${styles.nameHelp}`}>
-                Please enter valid email.
-              </div>
-            )}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
-              Phone
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="phone"
-              ref={phone}
-            />
-            {flags.phone && (
-              <div className={`form-text ${styles.nameHelp}`}>
-                This is not a valid phone number.
-              </div>
-            )}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="location" className="form-label">
-              Choose your location
-            </label>
-            <select
-              id="location"
-              className="form-select"
-              aria-label="Default select example"
-              value={chosenLocation}
-              onChange={handleLocationChange}
-            >
-              {locations.map((location) => (
-                <option key={location} value={location}>
-                  {location}
-                </option>
-              ))}
-            </select>
-
-            {flags.location && (
-              <div className={`form-text ${styles.nameHelp}`}>
-                Choose your preffered location.
-              </div>
-            )}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="languages" className="form-label">
-              Spoken languages
-            </label>
-            <div className="row">
-              {languages.map((language) => (
-                <div className="col-4" key={language}>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value={language}
-                      id="flexCheckDefault"
-                      name={language}
-                      onChange={handleLanguageChange}
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexCheckDefault"
-                    >
-                      {language}
-                    </label>
-                  </div>
+        <div className="container my-6">
+          <h1 className="text-center my-5">Votunteer Registration</h1>
+          <form onSubmit={submitHandler} className="my-6">
+            <div className="mb-3">
+              <label htmlFor="nameInput" className="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="nameInput"
+                aria-describedby="Name"
+                ref={name}
+              />
+              {flags.name && (
+                <div className={`form-text ${styles.nameHelp}`}>
+                  Please enter your name.
                 </div>
-              ))}
+              )}
             </div>
-            {flags.languages && (
-              <div className={`form-text ${styles.nameHelp}`}>
-                Choose atleast one language.
-              </div>
-            )}
-          </div>
-
-          <div className="mb-3">
-            <label htmlFor="availability" className="form-label">
-              Which days you are available to take classes.
-            </label>
-            <div className="row">
-              {days.map((day) => (
-                <div className="col-4" key={day}>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value={day}
-                      id="flexCheckDefault"
-                      name={day}
-                      onChange={handleDaysChange}
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexCheckDefault"
-                    >
-                      {day}
-                    </label>
-                  </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Enter email
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                ref={email}
+              />
+              {flags.email && (
+                <div className={`form-text ${styles.nameHelp}`}>
+                  Please enter valid email.
                 </div>
-              ))}
+              )}
             </div>
-            {flags.days && (
-              <div className={`form-text ${styles.nameHelp}`}>
-                Choose atleast one day.
+            <div className="mb-3">
+              <label htmlFor="phone" className="form-label">
+                Phone
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="phone"
+                ref={phone}
+              />
+              {flags.phone && (
+                <div className={`form-text ${styles.nameHelp}`}>
+                  This is not a valid phone number.
+                </div>
+              )}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="location" className="form-label">
+                Choose your location
+              </label>
+              <select
+                id="location"
+                className="form-select"
+                aria-label="Default select example"
+                value={chosenLocation}
+                onChange={handleLocationChange}
+              >
+                {locations.map((location) => (
+                  <option key={location} value={location}>
+                    {location}
+                  </option>
+                ))}
+              </select>
+
+              {flags.location && (
+                <div className={`form-text ${styles.nameHelp}`}>
+                  Choose your preffered location.
+                </div>
+              )}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="languages" className="form-label">
+                Spoken languages
+              </label>
+              <div className="row">
+                {languages.map((language) => (
+                  <div className="col-4" key={language}>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value={language}
+                        id="flexCheckDefault"
+                        name={language}
+                        onChange={handleLanguageChange}
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="flexCheckDefault"
+                      >
+                        {language}
+                      </label>
+                    </div>
+                  </div>
+                ))}
               </div>
-            )}
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
+              {flags.languages && (
+                <div className={`form-text ${styles.nameHelp}`}>
+                  Choose atleast one language.
+                </div>
+              )}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="availability" className="form-label">
+                Which days you are available to take classes.
+              </label>
+              <div className="row">
+                {days.map((day) => (
+                  <div className="col-4" key={day}>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value={day}
+                        id="flexCheckDefault"
+                        name={day}
+                        onChange={handleDaysChange}
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="flexCheckDefault"
+                      >
+                        {day}
+                      </label>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {flags.days && (
+                <div className={`form-text ${styles.nameHelp}`}>
+                  Choose atleast one day.
+                </div>
+              )}
+            </div>
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary ">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
       {loading && <Loading />}
     </>
